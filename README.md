@@ -11,8 +11,3 @@ git push origin master
 git push origin master
 git push origin master
 haha
-<<<<<<< HEAD
-1222
-=======
-1222
->>>>>>> dev
