@@ -1,0 +1,19 @@
+it's a application!
+but more diffcult in changing something,if you love her
+aaaaaa
+what a petty!
+everything is impossible!
+ssh-keygen -t rsa -C "youremail@example.com"
+ssh-keygen -t rsa -C "youremail@example.com"
+ssh-keygen -t rsa -C "youremail@example.com"
+git remote add origin git@github.com:babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git clone https://github.com/babaysite/gitskills_2.git
+git remote add origin https://github.com/babaysite/testAPP.git
+git clone https://github.com/babaysite/gitskills_2.git
