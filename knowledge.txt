@@ -1,0 +1,90 @@
+webpack:
+	模块加载器兼打包工具，能够将各种资源文件(JS/JSX、coffee、css/sass/less、图片等作为模块来使用处理)。
+	学习网址：www.w2c.com/Article/50764
+	解释：
+		将所需引用的各类文件打包，利用common.js等其他方式集合至一个js文件中，html引入该js文件将自动引用打包的文件内容；主要使用require(XXX)的形式引入模块；目前很多框架，例如react.js、phoneGap都使用此种方式。
+	
+	*优势：
+		*webpack是以commonJS的形式书写脚本，支持AMD/CMD，方便旧代码迁移。
+			*备注(AMD是RequireJS在推广过程中对模块定义的规范化产出；CMD是SeaJS在推广过程中对模块定义的规范化产出；类似的还有CommonJS Modules/2.0规范——>BravoJS推广过程中的产出；AMD提前执行依赖前置，CMD延迟执行 依赖就近)
+		*能被模块化的不仅是JS
+		*可替代部分grunp/gulp工作
+		*扩展性强，如React的热插拔
+		
+		例如：兼容CommonJS的写法
+		define(function(require,exports,module){
+			var someModule = require("someModule");
+			var anotherModile = require("anotherModule");
+			
+			someModule.doTehAwesome();
+			anotherModule.doMoarAwesome();
+			
+			exports.asplode = function(){
+				someModule.doTehAwesome();
+				anotherModule.doMoarAwesome();
+			};
+		});
+		
+		**安装和配置(npm 形式安装)
+			*安装：npm install webpack -g
+			       npm init
+				   npm install webpack --save-dev
+			*配置：每个项目下有一个webpack.config.js来作为配置项
+				   示例：
+			var webpack = require('webpack');
+			var commonsPlugin = new webpack.optimize.	   CommonsChunkPlugin('common.js');
+						module.exports = {
+			//插件项
+			plugins: [commonsPlugin],
+			//页面入口文件配置
+			entry: {
+				index : './src/js/page/index.js'
+			},
+			//入口文件输出配置
+			output: {
+				path: 'dist/js/page',
+				filename: '[name].js'
+			},
+			module: {
+				//加载器配置
+				loaders: [
+					{ test: /\.css$/, loader: 'style-loader!css-loader' },
+					{ test: /\.js$/, loader: 'jsx-loader?harmony' },
+					{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+					{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+				]
+			},
+			//其它解决方案配置
+			resolve: {
+				root: 'E:/github/flux-example/src', //绝对路径
+				extensions: ['', '.js', '.json', '.scss'],
+				alias: {
+					AppStore : 'js/stores/AppStores.js',
+					ActionType : 'js/actions/ActionType.js',
+					AppAction : 'js/actions/AppAction.js'
+				}
+			}
+		};
+		&&解释：
+			1.plugins是插件项，这里使用CommonChunkPlugin的插件，用于提取多个文件脚本，生成一个common.js来方便多页面之间的进行复用；
+			2.entry是页面入口文件配置，output是对应输出项配置大致语法如下：
+			{
+				entry: {
+					page1: "./page1",
+					//支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出
+					page2: ["./entry1", "./entry2"]
+				},
+				output: {
+					path: "dist/js/page",
+					filename: "[name].bundle.js"
+				}
+			}
+							
+		
+		
+		
+		
+		
+		
+		
+		
