@@ -1,0 +1,36 @@
+React:
+	是一个用于构建用户界面的JAVASCRIPT库
+	主要用于构建UI，等同于MVC模式中VIEW视图。
+	较高性能，代码逻辑简单。
+	
+	*特性：
+		*声明式设计：React采用声明范式，可以轻松描述应用。
+		*高效：React通过对DOM的模拟，最大限度地减少与DOM的交互
+		*灵活，可以与其他框架配合使用
+		*JSX：JSX是JS语法的扩展
+		*组件：通过React构建组件，实现复用
+		*单向响应的数据流：React实现了单向响应的数据流(Angular则为双向数据流)
+	*实例：
+		<div id="example"></div>
+		<script type="text/alebel>
+			ReactDOM.render (
+				<h1>Hello World!</h1>
+				document.getElementById('example');
+			)
+		备注：相当于在div.example标签中插入一段代码
+		
+	*安装：
+		网址：引用三个React CDN库
+		分别为：react.min.js(压缩源文件)、react-dom.min.js (DOM相关的功能)、browser.min.js(JSX的扩展)
+		安装包(利用npm环境进行安装)
+			& npm install babel    -
+			$ npm install webpack   -
+			$ npm install webpack-dev-server - 
+			
+			
+			
+			
+			
+			
+			
+				
