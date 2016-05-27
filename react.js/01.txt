@@ -74,7 +74,41 @@ React:
 				<div>{arr}</div>
 				document.getElementById('example')
 			);
-				*备注:显示数组里的所有对象内容			
+				*备注:显示数组里的所有对象内容	
+		
+		*组件：
+			React 允许将代码封装成组件(component),然后像插入普通HTML标签一样，在网页中插入这个组件
+			React.createClass方法就用于生成一个组件
+		
+			<div id="example"></div>
+				<script type="text/babel">
+					var HelloMessage = React.createClass({
+					render:function(){
+						return <input type='text' value={this.props.name} />
+						}
+					});
+				ReactDOM.render(
+				<HelloMessage name="john" />,
+					document.getElementById('example')
+				);
+			</script>
+			
+			*解释：上述的HelloMssage变量就是一个组件类；模板插入<HelloMessage/>会自动生成组件类的一个实例（下文的“组件”都指组件类的实例。值得注意的是组件类的变量名称首字母必须大写
+			***组件类只能含有一个顶级标签
+			***此处有一个概念为this.props为组件类
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			
